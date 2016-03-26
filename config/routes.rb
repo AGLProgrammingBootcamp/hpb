@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'home#index'
+  
   resources :posts
   post '/search'=>'posts#search_price'
   get '/input'=>'posts#input'
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
   #get '/posts/:id'=>'posts#show', as:'show'
   #get '/posts' => 'posts#index'
 
+  resources :participants
  
   
   # The priority is based upon order of creation: first created -> highest priority.

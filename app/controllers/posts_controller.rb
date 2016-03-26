@@ -15,6 +15,7 @@ class PostsController < ApplicationController
   
     def show
         @post=Post.find(params[:id])
+        @participant=Participant.new
     end
     
     def input
@@ -41,25 +42,11 @@ class PostsController < ApplicationController
          @posts=Post.find(params[:id])
     end
     
-    def register
-        @post=Post.find(params[:id])
-    end
-    
-    def join
-        @participant=Participant.new(participant_params)
-        @participant.save
-        #どこかにredirect_toで飛ばす
-    end
-    
-
+   
     private
     
     def post_params
         params.require(:post).permit(:sake_name, :price, :location, :date, :user_name, :email)
-    end
-    
-    def participant_params
-        params.require(:participant).permit(:participant_name, :participant_email)
     end
     
 end

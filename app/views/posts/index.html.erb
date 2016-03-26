@@ -1,4 +1,4 @@
 <% @posts.each do |post| %>
-<%= link_to post.sake_name, register_path(post.id) %>
-<%= post.price %>
+    <%= link_to post.sake_name, post %>
+    <%= post.price %>
 <% end %>

@@ -41,6 +41,13 @@ class PostsController < ApplicationController
          @posts=Post.find(params[:id])
     end
     
+    def register
+    end
+    
+    def join
+    end
+    
+    
     private
     
     def post_params

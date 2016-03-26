@@ -1,15 +1,15 @@
-<%=form_tag create_path do%>
+<%=form_for (@post) do |f|%>
     酒の名前
-    <input type="text" name="sake_name">
+    <%=f.text_field :sake_name%>
     酒の値段
-    <input type="text" name="price">
+    <%=f.text_field :price%>
     場所
-    <input type="text" name="location">
+    <%=f.text_field :location%>
     日時
-    <input type="datetime_field" name="date">
+    <%=f.date_field :date%>
     あなたの名前
-    <input type="text" name="user_name">
+　　<%=f.text_field :user_name%>
     あなたのメールアドレス
-    <input type="text" name="email">
-    <input type="submit" value="投稿する">
+    <%=f.text_field :email%>
+    <%=f.submit "保存"%>
 <%end%>

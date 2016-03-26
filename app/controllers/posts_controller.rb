@@ -1,21 +1,27 @@
 class PostsController < ApplicationController
 
+    
     def new
         @post=Post.new
     end
   
     def create
-        post=Post.new
-        post.sake_name=params[:sake_name]
-        post.price=params[:price]
-        post.location=params[:location]
-        post.date=params[:date]
-        post.user_name=params[:user_name]
-        post.email=params[:email]
-        post.save
+        #fail params.inspect
+        @post=Post.new(post_params)
+        @post.save
+        redirect_to @post
     end
   
     def show
+        @post=Post.find(params[:id])
     end
-
+    
+    
+    private
+    
+    def post_params
+        params.require(:post).permit(:sake_name, :price, :location, :date, :user_name, :email)
+    end
+    
+    
 end

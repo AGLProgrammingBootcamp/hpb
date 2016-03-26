@@ -1,0 +1,21 @@
+<%= form_tag(controller: :posts, action: :search_price, method: :post) do %>
+<%#= form_tag ({:controller => :posts, :action => :search_price }), {:method => :post} do %>
+値段で探す
+<%= text_field_tag "price1" %> ～　
+<%= text_field_tag "price2" %>
+<%= submit_tag "検索"%>
+<% end %>
+
+
+<%
+=begin
+%>
+<%=begin%>
+<%@posts.each do |post|%>
+    <%=link_to post.sake_name, "post_path(post.id)" %>
+    <%= post.price %>
+<%end%>
+<=end>
+<%
+=end
+%>

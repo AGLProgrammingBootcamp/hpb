@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
   root 'home#index'
+  resources :posts
+  post '/search'=>'posts#search_price'
+  get '/input'=>'posts#input'
   #get '/new' => 'posts#new'
   #post '/create'=> 'posts#create'
   #get '/posts/:id'=>'posts#show', as:'show'
   #get '/posts' => 'posts#index'
 
-  resources :posts
+ 
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

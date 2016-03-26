@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :posts
   post '/search'=>'posts#search_price'
   get '/input'=>'posts#input'
-  get '/register'=>'posts#register'
+  get '/register/:id'=>'posts#register', as:'register'
   post'/join'=>'posts#join'
   #get '/new' => 'posts#new'
   #post '/create'=> 'posts#create'

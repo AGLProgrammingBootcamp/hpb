@@ -1,0 +1,15 @@
+<%=form_for (@post) do |f|%>
+    酒の名前
+    <%=f.text_field :sake_name%>
+    酒の値段
+    <%=f.text_field :price%>
+    場所
+    <%=f.text_field :location%>
+    日時
+    <%=f.date_field :date%>
+    あなたの名前
+　　<%=f.text_field :user_name%>
+    あなたのメールアドレス
+    <%=f.text_field :email%>
+    <%=f.submit "保存"%>
+<%end%>

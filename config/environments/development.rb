@@ -15,6 +15,17 @@ Rails.application.configure do
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "mail.smtp2go.com",
+    port: 2525, # 8025, 587 and 25 can also be used.
+    domain: "https://homepage-shotaishida-1.c9users.io",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: "sgpcmg@gmail.com",
+    password: "sps810"
+    }
+  
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

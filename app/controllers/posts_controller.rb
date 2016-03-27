@@ -23,6 +23,7 @@ class PostsController < ApplicationController
         
     def search_price
 #        posts = Post.all
+#下記SQL言語を用いると、全データを参照する必要がなくなり、データ数が増えても短時間で検索できる
         @posts = Post.where(":price1 <= price AND price <= :price2", price1: params[:price1], price2: params[:price2])
         
 =begin

@@ -3,6 +3,7 @@
 <div><%=@post.location%></div>
 <div><%=@post.date%></div>
 
+<p>参加したい方は以下のフォームを記入して下さい</p>
 
 <%= form_for(@participant, :url => {:controller => :participants, :action =>:create, :method => :post}) do |f| %>
     あなたの名前
@@ -23,5 +24,7 @@
     <%= submit_tag "参加する"%>
 <% end %>
 -->
+
+
 
 <%=link_to "トップページ", root_path%>

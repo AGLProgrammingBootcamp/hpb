@@ -1,0 +1,12 @@
+<div><%=@post.sake_name%></div>
+<div><%=@post.price%></div>
+<div><%=@post.location%></div>
+<div><%=@post.date%></div>
+
+<%=form_for (@participant) do |f|%>
+    あなたの名前
+    <%=f.text_field :participant_name%>
+    あなたのメールアドレス
+    <%=f.text_field :participant_email%>
+    <%=f.submit "決定"%>
+<%end%>

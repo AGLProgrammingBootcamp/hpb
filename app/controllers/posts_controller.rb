@@ -15,6 +15,7 @@ class PostsController < ApplicationController
   
     def show
         @post=Post.find(params[:id])
+        @participant=Participant.new
     end
     
     def input
@@ -41,11 +42,11 @@ class PostsController < ApplicationController
          @posts=Post.find(params[:id])
     end
     
+   
     private
     
     def post_params
         params.require(:post).permit(:sake_name, :price, :location, :date, :user_name, :email)
     end
-    
     
 end

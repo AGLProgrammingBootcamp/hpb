@@ -2,3 +2,26 @@
 <div><%=@post.price%></div>
 <div><%=@post.location%></div>
 <div><%=@post.date%></div>
+
+
+<%= form_for(@participant, :url => {:controller => :participants, :action =>:create, :method => :post}) do |f| %>
+    あなたの名前
+    <%=f.text_field :name%>
+    あなたのメールアドレス
+    <%=f.text_field :email%>
+    <%= f.hidden_field :post_id, :value => @post.id %>
+    <%=f.submit "参加する"%>
+<% end %>
+
+<!--
+<%= form_tag participants_path, method: :post do %>
+    あなたの名前
+    <%= text_field_tag 'participant[name]' %>
+    あなたのメールアドレス
+    <%= text_field_tag 'participant[email]' %>
+    <%= hidden_field_tag 'participant[post=id]', @post.id %>
+    <%= submit_tag "参加する"%>
+<% end %>
+-->
+
+<%=link_to "トップページ", root_path%>
